@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /*Body*/
+        body{
+            background-color: lightgreen;
+        }
+        /*bodyEND*/
 
+        /*HorizontalMenu*/
         .HoMenu {
             float: left;
             width: 100%;
@@ -28,14 +34,58 @@
             background-color: greenyellow;
             color: black;
         }
+        /*HorizontalMenuEND*/
 
-
-
+        /*Footer*/
+        footer {
+            position: absolute;
+            bottom: 10px;
+        }
+        #creditsstart {
+            color: green;
+            font-size: 20px;
+            font-style: italic;
+            font-weight: bolder;
+        }
+        #creditstable {
+            border: 4px;
+            border-style: solid;
+            border-color: black;
+            border-collapse: collapse;
+        }
+        .creditstablehead {
+            border: 2px;
+            border-color:black;
+            border-style: solid;
+            background-color: green;
+            color: white;
+            padding: 5px;
+        }
+        .creditstablebody {
+            border: 2px;
+            border-color:black;
+            border-style: solid;
+            background-color: greenyellow;
+            padding: 2px;
+        }
+        .creditscenter {
+            text-align: center;
+        }
+        .creditsleft {
+            text-align: left;
+        }
+        /*FooterEND*/
 
     </style>
 </head>
+
 <body>
+
+    <!--Header-->
     <header><h1>Web-Programozás-1 Előadás Házi feladat</h1></header>
+    <!--Header_END-->
+
+    <!--Menu-->
     <ul id="HoMenu">
         <li class="HoMenuList"><a class="HoMenuLink" href="example1.html" target="_blank">1</a></li>
         <li class="HoMenuList"><a class="HoMenuLink" href="example2.html" target="_blank">2</a></li>
@@ -43,12 +93,40 @@
         <li class="HoMenuList"><a class="HoMenuLink" href="example4.html" target="_blank">4</a></li>
         <li class="HoMenuList"><a class="HoMenuLink" href="example5.html" target="_blank">5</a></li>
     </ul>
+    <!--Menu_END-->
 
+    <!--Content-->
     <h1 class="elso"></h1>
     <h1 class="masodik"></h1>
     <h1 class="harmadik"></h1>
     <h1 class="negyedik"></h1>
     <h1 class="otodik"></h1>
-    <footer></footer>
+    <!--Content_END-->
+
+    <!--Footer-->
+    <footer>
+        <span id="creditsstart">Készítők:</span>
+        <table id="creditstable">
+            <thead>
+                <tr>
+                    <th class="creditstablehead creditscenter">Név</th>
+                    <th class="creditstablehead creditsleft">Neptunkód</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="creditstablebody creditsleft">Pátyerkó Tamás</td>
+                    <td class="creditstablebody creditscenter">RT8EHP</td>
+                </tr>
+                <tr>
+                    <td class="creditstablebody creditsleft">Kökény Bendegúz Tibor</td>
+                    <td class="creditstablebody creditscenter">IF38I0</td>
+                </tr>
+            </tbody>
+        </table>
+    </footer>
+    <!--Footer_END-->
+
 </body>
+
 </html>
