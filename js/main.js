@@ -62,8 +62,17 @@ function updateRecord(formData) {
     array1[selectedIndex].city=formData.city; 
     printArray(); 
 } 
+function deleteRecord(index) {
+    array1[index].fullName = "";
+    array1[index].email = "";
+    array1[index].salary = "";
+    array1[index].city = "";
+    array1.splice(index, 1);
+    printArray(); 
+}
 function onDelete(index) { 
     if (confirm('Are you sure to delete this record ?')) { 
+        deleteRecord(index);
         resetForm(); 
         printArray(); 
     } 
