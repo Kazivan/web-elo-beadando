@@ -79,13 +79,50 @@ function onDelete(index) {
 } 
 function validate() { 
     isValid = true; 
+    var test_ln = 0;
+    var test_e = 0;
+    var test_s = 0;
+    var test_c = 0;
     if (document.getElementById("fullName").value == "") { 
-        isValid = false; 
+        test_ln = 0; 
         document.getElementById("fullNameValidationError").classList.remove("hide"); 
     } else { 
-        isValid = true; 
+        test_ln = 1; 
         if (!document.getElementById("fullNameValidationError").classList.contains("hide")) 
             document.getElementById("fullNameValidationError").classList.add("hide"); 
+    }
+
+    if (document.getElementById("email").value == "") { 
+        test_e = 0; 
+        document.getElementById("emailValidationError").classList.remove("hide"); 
+    } else { 
+        test_e = 1; 
+        if (!document.getElementById("emailValidationError").classList.contains("hide")) 
+            document.getElementById("emailValidationError").classList.add("hide"); 
     } 
+
+    if (document.getElementById("salary").value == "") { 
+        test_s = 0; 
+        document.getElementById("salaryValidationError").classList.remove("hide"); 
+    } else { 
+        test_s = 1; 
+        if (!document.getElementById("salaryValidationError").classList.contains("hide")) 
+            document.getElementById("salaryValidationError").classList.add("hide"); 
+    } 
+
+    if (document.getElementById("city").value == "") { 
+        test_c = 0; 
+        document.getElementById("cityValidationError").classList.remove("hide"); 
+    } else { 
+        test_c = 1; 
+        if (!document.getElementById("cityValidationError").classList.contains("hide")) 
+            document.getElementById("cityValidationError").classList.add("hide"); 
+    }
+    if(test_ln + test_e + test_s + test_c == 4) {
+        isValid = true; 
+    }
+    else {
+        isValid = false; 
+    }
     return isValid; 
 }
