@@ -83,7 +83,7 @@ function validate() {
     var test_e = 0;
     var test_s = 0;
     var test_c = 0;
-    if (document.getElementById("fullName").value == "") { 
+    if (document.getElementById("fullName").value == "" || document.getElementById("fullName").value.length < 6 || document.getElementById("fullName").value.length > 26) { 
         test_ln = 0; 
         document.getElementById("fullNameValidationError").classList.remove("hide"); 
     } else { 
@@ -92,7 +92,7 @@ function validate() {
             document.getElementById("fullNameValidationError").classList.add("hide"); 
     }
 
-    if (document.getElementById("email").value == "") { 
+    if (document.getElementById("email").value == "" || document.getElementById("email").value.length < 10 || document.getElementById("email").value.length > 40) { 
         test_e = 0; 
         document.getElementById("emailValidationError").classList.remove("hide"); 
     } else { 
@@ -101,7 +101,7 @@ function validate() {
             document.getElementById("emailValidationError").classList.add("hide"); 
     } 
 
-    if (document.getElementById("salary").value == "") { 
+    if (document.getElementById("salary").value == "" || document.getElementById("salary").value.length < 1 || document.getElementById("salary").value.length > 5) { 
         test_s = 0; 
         document.getElementById("salaryValidationError").classList.remove("hide"); 
     } else { 
@@ -110,7 +110,7 @@ function validate() {
             document.getElementById("salaryValidationError").classList.add("hide"); 
     } 
 
-    if (document.getElementById("city").value == "") { 
+    if (document.getElementById("city").value == "" || document.getElementById("city").value.length < 4 || document.getElementById("city").value.length > 80) { 
         test_c = 0; 
         document.getElementById("cityValidationError").classList.remove("hide"); 
     } else { 
