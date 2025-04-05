@@ -166,14 +166,14 @@
             <table class="list" id="employeeList"> 
                 <thead> 
                     <tr> 
-                        <th>Full Name</th> 
-                        <th>Email Id</th> 
-                        <th>Salary</th> 
-                        <th>City</th> 
-                        <th>Actions</th> 
-                    </tr> 
+                        <th><button onclick="RendezfullName()" id="fullNameR">¤</button>Full Name<br><input type="search" id="searchC1"/></th> 
+                        <th><button onclick="Rendezemail()" id="emailR">¤</button>Email Id<br><input type="search" id="searchC2"/></th> 
+                        <th><button onclick="Rendezsalary()" id="salaryR">¤</button>Salary<br><input type="search" id="searchC3"></th> 
+                        <th><button onclick="Rendezcity()" id="cityR">¤</button>City<br><input type="search" id="searchC4"/></th> 
+                        <th>Actions<br><button id="clearsearch">Clear Search</button></th> 
+                    </tr>
                 </thead> 
-                <tbody> 
+                <tbody id="employeeListBody"> 
  
                 </tbody> 
             </table> 

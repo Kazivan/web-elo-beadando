@@ -1,5 +1,6 @@
 var selectedIndex = null; 
 var array1 = new Array();
+var b1 = 0, b2 = 0, b3 = 0, b4 = 0;
 function onFormSubmit() { 
     if (validate()) { 
         var formData = readFormData(); 
@@ -126,3 +127,135 @@ function validate() {
     }
     return isValid; 
 }
+function RendezfullName(){
+    document.getElementById("emailR").innerHTML="¤";
+    document.getElementById("salaryR").innerHTML="¤";
+    document.getElementById("cityR").innerHTML="¤";
+    if(b1 == 0){
+        document.getElementById("fullNameR").innerHTML="^";
+        array1.sort(function(a, b) {
+        return a.fullName.localeCompare(b.fullName)
+       });
+       b1 = 1;
+    }
+    else{
+        
+        document.getElementById("fullNameR").innerHTML="ˇ";
+        b1 = 0;
+        array1.reverse(array1.sort(function(a, b) {
+            return a.fullName.localeCompare(b.fullName)
+           }));
+    }
+    printArray(); 
+}
+function Rendezemail(){
+    document.getElementById("fullNameR").innerHTML="¤";
+    document.getElementById("salaryR").innerHTML="¤";
+    document.getElementById("cityR").innerHTML="¤";
+    if(b2 == 0){
+        document.getElementById("emailR").innerHTML="^";
+        array1.sort(function(a, b) {
+        return a.email.localeCompare(b.email)
+       });
+       b2 = 1;
+    }
+    else{
+        
+        document.getElementById("emailR").innerHTML="ˇ";
+        b2 = 0;
+        array1.reverse(array1.sort(function(a, b) {
+            return a.email.localeCompare(b.email)
+           }));
+    }
+    printArray(); 
+}
+function Rendezsalary(){
+    document.getElementById("fullNameR").innerHTML="¤";
+    document.getElementById("emailR").innerHTML="¤";
+    document.getElementById("cityR").innerHTML="¤";
+    if(b3 == 0){
+        document.getElementById("salaryR").innerHTML="^";
+        array1.sort(function(a, b) {
+        return a.salary.localeCompare(b.salary)
+       });
+       b3 = 1;
+    }
+    else{
+        
+        document.getElementById("salaryR").innerHTML="ˇ";
+        b3 = 0;
+        array1.reverse(array1.sort(function(a, b) {
+            return a.salary.localeCompare(b.salary)
+           }));
+    }
+    printArray(); 
+}
+function Rendezcity(){
+    document.getElementById("fullNameR").innerHTML="¤";
+    document.getElementById("emailR").innerHTML="¤";
+    document.getElementById("salaryR").innerHTML="¤";
+    if(b4 == 0){
+        document.getElementById("cityR").innerHTML="^";
+        array1.sort(function(a, b) {
+        return a.city.localeCompare(b.city)
+       });
+       b4 = 1;
+    }
+    else{
+        
+        document.getElementById("cityR").innerHTML="ˇ";
+        b4 = 0;
+        array1.reverse(array1.sort(function(a, b) {
+            return a.city.localeCompare(b.city)
+           }));
+    }
+    printArray(); 
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("searchC1").addEventListener("input", function() {
+        filtering();
+    });
+    document.getElementById("searchC2").addEventListener("input", function() {
+        filtering();
+    });
+    document.getElementById("searchC3").addEventListener("input", function() {
+        filtering();
+    });
+    document.getElementById("searchC4").addEventListener("input", function() {
+        filtering();
+    });
+    document.getElementById("clearsearch").addEventListener("click", function(){
+        clearsearchs();
+    });
+    });
+
+    function filtering() {
+        let searchC1 = document.getElementById("searchC1").value.toUpperCase();
+        let searchC2 = document.getElementById("searchC2").value.toUpperCase();
+        let searchC3 = document.getElementById("searchC3").value.toUpperCase();
+        let searchC4 = document.getElementById("searchC4").value.toUpperCase();
+        let tableBody = document.getElementById("employeeListBody");
+        let rows = tableBody.getElementsByTagName("tr");
+        for (let i = 0; i < rows.length; i++) {
+            let cells = rows[i].getElementsByTagName("td");
+            let matchesSearchC1 = cells[0].textContent.toUpperCase().includes(searchC1);
+            let matchesSearchC2 = cells[1].textContent.toUpperCase().includes(searchC2);
+            let matchesSearchC3 = cells[2].textContent.toUpperCase().includes(searchC3);
+            let matchesSearchC4 = cells[3].textContent.toUpperCase().includes(searchC4);
+            if (matchesSearchC1 && matchesSearchC2 && matchesSearchC3 && matchesSearchC4) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+    }
+    function clearsearches() {
+        document.getElementById("searchC1").value = "";
+        document.getElementById("searchC2").value = "";
+        document.getElementById("searchC3").value = "";
+        document.getElementById("searchC4").value = "";
+        filterTable();
+    }

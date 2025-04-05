@@ -30,13 +30,13 @@ table.list{
     width:100%; 
 } 
 td, th { 
-    border: 1px solid #dddddd; 
+    border: 1px solid #dddddd;
     text-align: left; 
     padding: 8px; 
 } 
 tr:nth-child(even),table.list thead>tr { 
     background-color: #dddddd; 
-} 
+}
 input[type=text], input[type=number] { 
     width: 100%; 
     padding: 8px 20px; 
