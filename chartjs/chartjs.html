@@ -144,7 +144,7 @@
             <th>65</th>
             <th>46</th>
             <th>46</th>
-            <th>  <button onclick= "a()">kiválaszt  </button></th>
+            <th>  <button onclick=  "a()" >kiválaszt  </button></th>
             
         </tr>
     
@@ -181,28 +181,32 @@
             <th>  <button onclick= "e()">kiválaszt  </button></th>
         </tr>
     </table>
-  
     <div>
         <canvas id="myChart"></canvas>
-      </div>
+        <button onclick=  "ref()" >bezar  </button>
+      </div>   
+    
       
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       
       <script>
+        function ref(){
+          window.location.reload();
+        }
         
+        
+        function a(){
  
       
         
         
+         
+
         
+
         
-        
-        var szám1=50;
-        var szám2=0;
-        var szám3=9;
-        var szám4=0;
-        var szám5=0;
-       
+                 
+    
         
         
         const ctx = document.getElementById('myChart');
@@ -210,10 +214,10 @@
         new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Szam1', 'Szam2', 'Szam3', 'Szam4', 'Szam5'],
             datasets: [{
               label: '# of Votes',
-              data: [  szám1, szám2, szám3, szám4, szám5],
+              data: [  1234, 34, 65, 46, 46],
               borderWidth: 1
             }]
           },
@@ -225,51 +229,45 @@
             }
           }
         });
-        function a() 
-        {
-         szám1=1234;
-         szám2=34;
-         szám3=65;
-         szám4=46;
-         szám5=46;
+    
+        
+    
+      }
+    function b(){
+ 
+      
+        
+        
+        
+        
+        
+       
+        
+        
+const cty = document.getElementById('myChart');
 
-        }
-        function b() 
-        {
-         szám1=1234;
-         szám2=34;
-         szám3=65;
-         szám4=46;
-         szám5=46;
-
-        }
-        function c() 
-        {
-         szám1=1234;
-         szám2=34;
-         szám3=65;
-         szám4=46;
-         szám5=46;
-
-        }
-        function d() 
-        {
-         szám1=1234;
-         szám2=34;
-         szám3=65;
-         szám4=46;
-         szám5=46;
-
-        }
-        function e() 
-        {
-         szám1=1234;
-         szám2=34;
-         szám3=65;
-         szám4=46;
-         szám5=46;
-
-        }
+new Chart(cty, {
+   type: 'bar',
+   data: {
+     labels: ['Szam1', 'Szam2', 'Szam3', 'Szam4', 'Szam5'],
+     datasets: [{
+       label: '# of Votes',
+       data: [  12, 34, 65, 46, 46],
+       borderWidth: 1
+     }]
+   },
+   options: {
+     scales: {
+       y: {
+         beginAtZero: true
+       }
+     }
+     
+   }
+   
+ });
+ 
+} 
 
       </script>
        
@@ -277,7 +275,9 @@
 
     
     
-       
+       <div>
+        <canvas id="myChart"></canvas>
+      </div>   
     
     
     
