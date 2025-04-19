@@ -1,5 +1,5 @@
-code="AAAAAAabc123";
-url="http://gamf.nhely.hu/ajax1/";
+code="RT8EHPezkod6";
+url="http://gamf.nhely.hu/ajax2/";
 var xmlHttp=new XMLHttpRequest();
 function read() {
 document.getElementById("code").innerHTML="code="+code;
@@ -14,10 +14,10 @@ let list = data.list;
 str="<H1>Read</H1>";
 str+="<p>Number of records: "+data.rowCount+"</p>";
 str+="<p>Last max "+data.maxNum+" records:</p>";
-str+="<table><tr><th>id</th><th>name</th><th>city</th><th>phone</th><th>code</th></tr>";
+str+="<table><tr><th>id</th><th>name</th><th>height</th><th>weight</th><th>code</th></tr>";
 for(let i=0; i<list.length; i++)
 str +=
-"<tr><td>"+list[i].id+"</td><td>"+list[i].name+"</td><td>"+list[i].city+"</td><td>"+list[i].phone+"</td><td>"+list[i].code+"</td></tr>";
+"<tr><td>"+list[i].id+"</td><td>"+list[i].name+"</td><td>"+list[i].height+"</td><td>"+list[i].weight+"</td><td>"+list[i].code+"</td></tr>";
 str +="</table>";
 document.getElementById("readDiv").innerHTML=str;
 }
@@ -27,13 +27,13 @@ xmlHttp.send(params);
 function create(){
 // name: reserved word
 nameStr = document.getElementById("name1").value;
-city = document.getElementById("city1").value;
-phone = document.getElementById("phone1").value;
-if(nameStr.length>0 && nameStr.length<=30 && city.length>0 && city.length<=30 &&
-phone.length>0 && phone.length<=30 && code.length<=30){
+height = document.getElementById("height1").value;
+weight = document.getElementById("weight1").value;
+if(nameStr.length>0 && nameStr.length<=30 && height.length>0 && height.length<=30 &&
+weight.length>0 && weight.length<=30 && code.length<=30){
 xmlHttp.open("POST",url,true);
 xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-var params = "code="+code+"&op=create&name="+nameStr+"&city="+city+"&phone="+phone;
+var params = "code="+code+"&op=create&name="+nameStr+"&height="+height+"&weight="+weight;
 xmlHttp.onreadystatechange = () => {
 if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 let data = xmlHttp.responseText;
@@ -43,8 +43,8 @@ else
 str="Create NOT successful!";
 document.getElementById("createResult").innerHTML=str;
 document.getElementById("name1").value="";
-document.getElementById("city1").value="";
-document.getElementById("phone1").value="";
+document.getElementById("height1").value="";
+document.getElementById("weight1").value="";
 read();
 }
 };
@@ -65,8 +65,8 @@ let list = data.list;
 for(let i=0; i<list.length; i++)
 if(list[i].id==document.getElementById("idUpd").value){
 document.getElementById("name2").value=list[i].name;
-document.getElementById("city2").value=list[i].city;
-document.getElementById("phone2").value=list[i].phone;
+document.getElementById("height2").value=list[i].height;
+document.getElementById("weight2").value=list[i].weight;
 }
 }
 };
@@ -76,14 +76,14 @@ function update(){
 // name: reserved word
 id = document.getElementById("idUpd").value;
 nameStr = document.getElementById("name2").value;
-city = document.getElementById("city2").value;
-phone = document.getElementById("phone2").value;
-if(id.length>0 && id.length<=30 && nameStr.length>0 && nameStr.length<=30 && city.length>0 &&
-city.length<=30 && phone.length>0 && phone.length<=30 && code.length<=30){
+height = document.getElementById("height2").value;
+weight = document.getElementById("weight2").value;
+if(id.length>0 && id.length<=30 && nameStr.length>0 && nameStr.length<=30 && height.length>0 &&
+height.length<=30 && weight.length>0 && weight.length<=30 && code.length<=30){
 xmlHttp.open("POST",url,true);
 xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 var params =
-"code="+code+"&op=update&id="+id+"&name="+nameStr+"&city="+city+"&phone="+phone;
+"code="+code+"&op=update&id="+id+"&name="+nameStr+"&height="+height+"&weight="+weight;
 xmlHttp.onreadystatechange = () => {
 if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 let data = xmlHttp.responseText;
@@ -94,8 +94,8 @@ str="Update NOT successful!";
 document.getElementById("updateResult").innerHTML=str;
 document.getElementById("idUpd").value="";
 document.getElementById("name2").value="";
-document.getElementById("city2").value="";
-document.getElementById("phone2").value="";
+document.getElementById("height2").value="";
+document.getElementById("weight2").value="";
 read();
 }
 };
